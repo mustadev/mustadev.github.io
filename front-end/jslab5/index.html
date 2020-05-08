@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>JS Exercies</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Epicerie</div>
+                        <ul class="list-group" id="fruits">
+                        </ul>
+                        <div class="input-group mt-2">
+                            <input type="text" name="fruit" id="fruit" placeholder="nom de fruit" class="form-control">
+                            <div class="input-group-prepend">
+                                <button  id="acheter" class="btn btn-primary"> Acheter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Exercice 2</div>
+                        <div class="card-text"> Pas encore </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        var fruits = ["mangue", "raisin", "figue", "kiwi"];
+        
+        function afficherFruits() {
+            let fruitsDom = document.getElementById("fruits");
+            fruitsDom.innerHTML= '';
+            for (fruit of fruits) {
+                let fruitDom = document.createElement("li");
+                fruitDom.className = "list-group-item";
+                fruitDom.style = "text-transform: capitalize";
+                fruitDom.innerHTML = fruit;
+                fruitsDom.appendChild(fruitDom);
+            }
+        }
+
+        function acheterFruit() {
+            let fruitName = document.getElementById("fruit").value.toLowerCase();
+
+            document.getElementById("fruit").value = "";
+            console.log(fruitName);
+            if (!fruitName){
+                return;
+            } 
+            let fruitIndex = fruits.indexOf(fruitName);
+            if (fruitIndex < 0) {
+                alert("indisponible");
+                return;
+            }
+            fruits.splice(fruitIndex, 1);
+            afficherFruits();
+            alert("ok");
+        }
+        document.getElementById("acheter").addEventListener('click', acheterFruit);
+
+        afficherFruits();
+
+    </script>
+</body>
+
+</html>
