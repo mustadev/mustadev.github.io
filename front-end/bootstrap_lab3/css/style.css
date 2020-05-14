@@ -3,10 +3,12 @@
     color: #7299BD;
 }
 
+/* secondary color */
 .bg-secondary-color {
     background-color: #2E942A;
 }
 
+/* background  main color */
 .bg-primary-color {
     background-color: #e9edf0;
     /* background-color: #000; */
