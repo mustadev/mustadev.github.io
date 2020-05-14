@@ -19,6 +19,7 @@
 <body>
     <div class="container">
         <div class="row pt-5">
+            <!-- exercice 1 -->
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
@@ -34,6 +35,7 @@
                     </div>
                 </div>
             </div>
+            <!-- exercice 2 mais il est pas fini -->
             <div class="col-lg-12 d-none">
                 <div class="card">
                     <div class="card-body">
@@ -48,7 +50,7 @@
     </div>
     <script>
         var fruits = ["mangue", "raisin", "figue", "kiwi"];
-        
+        // affichage des fruits
         function afficherFruits() {
             let fruitsDom = document.getElementById("fruits");
             fruitsDom.innerHTML= '';
@@ -61,6 +63,7 @@
             }
         }
 
+        // acheter les fruit  
         function acheterFruit() {
             let fruitName = document.getElementById("fruit").value.toLowerCase();
 
@@ -78,6 +81,7 @@
             afficherFruits();
             alert("ok");
         }
+        // ajouter linstner au button
         document.getElementById("acheter").addEventListener('click', acheterFruit);
 
         afficherFruits();
