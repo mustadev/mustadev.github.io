@@ -1,6 +1,7 @@
-### TypeScript Lab 9
+# TypeScript Lab 9
 
-# Run main.js
-`bash
+### Run main.js
+
+```bash
 node main.js
-`
+```
