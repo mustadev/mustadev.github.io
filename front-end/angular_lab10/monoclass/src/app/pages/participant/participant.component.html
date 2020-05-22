@@ -1,6 +1,7 @@
 <div class="row p-3">
     <div class="col-lg-9">
-        <table class="table table-striped">
+        <table class="table table-striped w-100">
+            <button (click)="addParticipant()" class="btn btn-primary add-btn zindex-fixed m-5"><span>&#43;</span></button>
             <thead>
                 <tr>
                     <th scope="col">id</th>
@@ -24,7 +25,7 @@
                 </tr>
             </tbody>
         </table>
-        <div (click)="addParticipant()" class="btn btn-primary">ADD</div>
+        
     </div>
     <div class="col-lg-3">
         <div class="card">

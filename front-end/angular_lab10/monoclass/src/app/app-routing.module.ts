@@ -8,7 +8,7 @@ import { ParticipantComponent } from './pages/participant/participant.component'
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/discussion',pathMatch: 'full'},
+  { path: '', redirectTo: '/travaux',pathMatch: 'full'},
   { path: 'discussion', component: DiscussionComponent},
   { path: 'travaux', component: TravauxComponent},
   { path: 'participant', component: ParticipantComponent}
