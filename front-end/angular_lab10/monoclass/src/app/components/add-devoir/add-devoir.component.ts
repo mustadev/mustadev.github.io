@@ -19,7 +19,7 @@ export class AddDevoirComponent implements OnInit {
   ngOnInit(): void {
     this.devoir = {};
   }
-
+// submit and add devoir
   submit(form:NgForm){
     let date = new Date(this.dateNaissance);
     let age = new Date().getFullYear() - date.getFullYear();

@@ -32,7 +32,7 @@ export class ParticipantComponent implements OnInit {
     config.backdrop = 'static';
     config.keyboard = false;
   }
-
+// add participant
   addParticipant() {
     const modalRef = this.modalService.open(AddParticipantComponent);
     modalRef.result.then( participant => {
@@ -40,13 +40,13 @@ export class ParticipantComponent implements OnInit {
       //this.participants.push(participant);
     })
   }
-
+// edit participant
   deleteParticipant(id:number){
     this.participantService.deleteParticipant(id).subscribe(() => {
       console.log("paricipant ", id, "deleted");
     })
   }
-
+// edit participant
   editParticipant(id:number){
     console.log("edit user id: ", id);
     let participant = this.participants.find((part) => part.id === id);
@@ -63,7 +63,7 @@ export class ParticipantComponent implements OnInit {
       //this.participants.push(participant);
     })
   }
-
+// get init participants
   ngOnInit(): void {
     this.participantService.getParticipants().subscribe((participants:Participant[]) => {
       this.participants = participants;

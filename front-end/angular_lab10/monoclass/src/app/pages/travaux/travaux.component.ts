@@ -53,7 +53,7 @@ export class TravauxComponent implements OnInit {
       //this.Devoirs.push(Devoir);
     })
   }
-
+// generate Youtube Embeded Url
   getYtbEmbedUrl(ytbUrl:string):string {
     let videoUrl = ytbUrl.split('=')[1];
     console.log("video Url id: ", videoUrl);
