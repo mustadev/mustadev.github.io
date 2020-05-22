@@ -1,0 +1,44 @@
+{
+  "participants": [
+    {
+      "id": 0,
+      "nom": "Max",
+      "prenom": "Plank",
+      "age": null,
+      "email": "max.plank@gmail.com",
+      "tel": "0616161616"
+    },
+    {
+      "id": 1,
+      "nom": "neils",
+      "prenom": "bohr",
+      "age": 77,
+      "email": "neils@bohr.com",
+      "tel": "0766666611"
+    },
+    {
+      "id": 2,
+      "nom": "rick",
+      "prenom": "morty",
+      "age": 88,
+      "email": "rick@morty.com",
+      "tel": "0555666611"
+    },
+    {
+      "id": 4,
+      "nom": "tony",
+      "prenom": "ferguson",
+      "age": 88,
+      "email": "tony@ferguson.com",
+      "tel": "0758666611"
+    }
+  ],
+  "devoirs": [
+	  {
+	  "id":0,
+	  "titre":"devoir 1",
+	  "description": "description",
+	  "ytbUrl":"https://www.youtube.com/embed/-NER_Dy7ohY"
+	  }
+  ]
+}
