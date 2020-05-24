@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ParticipantService } from 'src/app/services/participant.service';
+import Participant from 'src/app/models/Participant';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  participant:Participant;
+  constructor(
+    private participantService:ParticipantService,
+    private router:Router) { }
 
   ngOnInit(): void {
+    this.participant = new Participant();
+  }
+
+  signup(form:NgForm) {
+    this.participant.age = new Date().getFullYear() - this.participant.dateNaissance.year;
+    this.participantService.signup(this.participant).subscribe(participant => {
+      console.log("regestred as :", JSON.stringify(participant));
+      sessionStorage.setItem("participant", JSON.stringify(participant));
+      this.router.navigate(['/travaux']);
+    });
   }
 
 }

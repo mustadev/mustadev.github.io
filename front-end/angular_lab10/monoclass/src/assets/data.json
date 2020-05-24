@@ -12,7 +12,21 @@
       "tel": "060606060606",
       "age": 104,
       "id": 1,
-      "password":"password"
+      "password": "password"
+    },
+    {
+      "nom": "ppp",
+      "prenom": "ppp",
+      "dateNaissance": {
+        "year": 2020,
+        "month": 5,
+        "day": 16
+      },
+      "email": "mm@mm.com",
+      "tel": "06060606",
+      "password": "password",
+      "age": 0,
+      "id": 2
     }
   ],
   "devoirs": [

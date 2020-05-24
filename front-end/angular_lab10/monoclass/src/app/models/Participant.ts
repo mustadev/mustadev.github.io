@@ -7,5 +7,6 @@ export default class Participant {
     age: number;
     dateNaissance:NgbDate;
     email: string;
+    password:string;
     tel: string;
 }

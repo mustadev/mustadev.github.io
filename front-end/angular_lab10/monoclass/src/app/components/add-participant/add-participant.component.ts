@@ -12,7 +12,6 @@ import { ParticipantService } from 'src/app/services/participant.service';
 export class AddParticipantComponent implements OnInit {
 
   participant:Participant;
-  dateNaissance:NgbDate;
   constructor(
     private participantService:ParticipantService,
     public activeModal: NgbActiveModal) { }
