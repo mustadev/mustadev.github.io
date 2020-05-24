@@ -7,13 +7,14 @@ import { TravauxComponent } from './pages/travaux/travaux.component';
 import { ParticipantComponent } from './pages/participant/participant.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ParticipantGuard } from './services/participant.guard';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/travaux',pathMatch: 'full'},
-  { path: 'discussion', component: DiscussionComponent},
-  { path: 'travaux', component: TravauxComponent},
-  { path: 'participant', component: ParticipantComponent},
+  { path: 'discussion', component: DiscussionComponent, canActivate: [ParticipantGuard]},
+  { path: 'travaux', component: TravauxComponent, canActivate: [ParticipantGuard]},
+  { path: 'participant', component: ParticipantComponent, canActivate: [ParticipantGuard]},
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent}
 ];
