@@ -5,18 +5,16 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ParticipantGuard implements CanActivate {
-  
+export class FormateurGuard implements CanActivate {
   constructor(private router:Router){}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log('Participant Guard Run');
-      if (!sessionStorage.getItem('isLoggedIn')){
-        return this.router.parseUrl("/login");
+      console.log('Formateur Guard Run');
+      if (!sessionStorage.getItem("formateur")){
+        return this.router.parseUrl("/formateur/login");
       }
     return true;
   }
-  
   
 }

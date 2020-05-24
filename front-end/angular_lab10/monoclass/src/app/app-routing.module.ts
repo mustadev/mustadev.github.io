@@ -9,6 +9,12 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ParticipantGuard } from './services/participant.guard';
 
+//formateur component
+import { FormateurLoginComponent } from './pages/formateur-login/formateur-login.component';
+import { FormateurSignupComponent } from './pages/formateur-signup/formateur-signup.component';
+import { FormateurGuard } from './services/formateur.guard';
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/travaux',pathMatch: 'full'},
@@ -16,7 +22,11 @@ const routes: Routes = [
   { path: 'travaux', component: TravauxComponent, canActivate: [ParticipantGuard]},
   { path: 'participant', component: ParticipantComponent, canActivate: [ParticipantGuard]},
   { path: 'login', component: LoginComponent},
-  { path: 'signup', component: SignupComponent}
+  { path: 'signup', component: SignupComponent},
+  { path: 'formateur', children: [
+    { path: 'login', component: FormateurLoginComponent },
+    { path: 'signup', component: FormateurSignupComponent }
+  ]}
 ];
 
 @NgModule({

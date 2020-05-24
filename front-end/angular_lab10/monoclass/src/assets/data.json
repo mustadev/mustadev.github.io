@@ -36,5 +36,13 @@
       "description": "devoir description description description description description description description description description description description description description description description description",
       "ytbUrl": "https://www.youtube.com/watch?v=-NER_Dy7ohY"
     }
-  ]
+  ],
+  "formateurs": [{
+	  "nom": "pp",
+	  "prenom": "pp",
+	  "tel": "06060606",
+	  "email": "pp@gmail.com",
+	  "password": "password",
+	  "id": 0
+  }]
 }

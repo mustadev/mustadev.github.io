@@ -18,6 +18,8 @@ import { SafeUrlPipe } from './safe-url.pipe';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
+import { FormateurLoginComponent } from './pages/formateur-login/formateur-login.component';
+import { FormateurSignupComponent } from './pages/formateur-signup/formateur-signup.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.
     SafeUrlPipe,
     LoginComponent,
     SignupComponent,
-    ConfirmModalComponent
+    ConfirmModalComponent,
+    FormateurLoginComponent,
+    FormateurSignupComponent
   ],
   imports: [
     BrowserModule,

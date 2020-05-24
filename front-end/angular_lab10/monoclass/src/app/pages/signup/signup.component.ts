@@ -25,6 +25,8 @@ export class SignupComponent implements OnInit {
     this.participantService.signup(this.participant).subscribe(participant => {
       console.log("regestred as :", JSON.stringify(participant));
       sessionStorage.setItem("participant", JSON.stringify(participant));
+      sessionStorage.setItem('isLoggedIn', "true");
+      sessionStorage.setItem('userType', "PARTICIPANT");
       this.router.navigate(['/travaux']);
     });
   }

@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
     this.participantService.login(this.email, this.password).subscribe(participant => {
       console.log("loged in as: ", JSON.stringify(participant[0]));
       sessionStorage.setItem('participant', JSON.stringify(participant[0]));
+      sessionStorage.setItem('isLoggedIn', "true");
+      sessionStorage.setItem('userType', "PARTICIPANT");
       this.router.navigate(['/travaux']);
     });
   }
