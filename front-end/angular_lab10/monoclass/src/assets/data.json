@@ -11,7 +11,8 @@
       "email": "pp@gmail.com",
       "tel": "060606060606",
       "age": 104,
-      "id": 1
+      "id": 1,
+      "password":"password"
     }
   ],
   "devoirs": [

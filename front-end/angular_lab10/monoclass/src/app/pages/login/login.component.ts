@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ParticipantService } from 'src/app/services/participant.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,15 +10,22 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   password:string;
-  username:string;
-  constructor() { }
+  email:string;
+  constructor(
+    private participantService:ParticipantService,
+    private router:Router) { }
 
   ngOnInit(): void {
 
   }
 
   login(){
-    console.log("login:", this.username, this.password)
+    console.log("login:", this.email, this.password)
+    this.participantService.login(this.email, this.password).subscribe(participant => {
+      console.log("loged in as: ", JSON.stringify(participant[0]));
+      sessionStorage.setItem('participant', JSON.stringify(participant[0]));
+      this.router.navigate(['/travaux']);
+    });
   }
 
 }

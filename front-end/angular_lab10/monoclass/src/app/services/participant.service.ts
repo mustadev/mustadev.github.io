@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import Participant from '../models/Participant';
 
@@ -35,5 +35,19 @@ export class ParticipantService {
     const headers = new HttpHeaders().set("Content-Type", "application/json");
     return this.http
       .put<Participant>(PARTICIPANT_URL + "/" + participant.id, participant, {headers: headers});
+  }
+
+  login(email:string, password:string):Observable<Participant[]> {
+    const params = new HttpParams()
+      .set("email", email)
+      .set("password", password)
+      .set("_limit", "1");
+    return this.http.get<Participant[]>(PARTICIPANT_URL, {params: params});
+  }
+
+  signup(participant:Participant):Observable<Participant>{
+    const headers = new HttpHeaders();
+    headers.set("Content-Type", "application/json");
+    return this.http.post<Participant>(PARTICIPANT_URL, participant, {headers: headers});
   }
 }
