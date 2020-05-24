@@ -4,6 +4,7 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { AddParticipantComponent } from 'src/app/components/add-participant/add-participant.component';
 import { ParticipantService } from 'src/app/services/participant.service';
 import { EditParticipantComponent } from 'src/app/components/edit-participant/edit-participant.component';
+import { ConfirmModalComponent } from 'src/app/components/confirm-modal/confirm-modal.component';
 
 @Component({
   selector: 'app-participant',
@@ -38,12 +39,23 @@ export class ParticipantComponent implements OnInit {
     modalRef.result.then( participant => {
       console.log("result of module", participant);
       //this.participants.push(participant);
-    })
+    });
   }
-// edit participant
+// delete Participant participant
   deleteParticipant(id:number){
-    this.participantService.deleteParticipant(id).subscribe(() => {
-      console.log("paricipant ", id, "deleted");
+    const modalRef = this.modalService.open(ConfirmModalComponent);
+    modalRef.componentInstance.message = "Are you sure you want to delete this Participant"
+    modalRef.result.then(confirm => {
+      if (confirm){
+        console.log("Delete Confirmed", confirm);
+        this.participantService.deleteParticipant(id).subscribe(resutl => {
+          console.log("participant deleted ! "+ id);
+          modalRef.close();
+        });
+      }
+      console.log("delete Canceled");
+      modalRef.dismiss();
+      //this.participants.push(participant);
     })
   }
 // edit participant

@@ -5,7 +5,7 @@
     </button>
 </div>
 <form novalidate #form="ngForm" (ngSubmit)="submit(form)">
-<div class="modal-body">
+    <div class="modal-body">
 
         <div class="form-group">
             <label>Title</label>
@@ -14,19 +14,20 @@
         </div>
         <div class="form-group">
             <label>Description</label>
-            <input type="text" class="form-control" name="description" [(ngModel)]="devoir.description" placeholder="Description"
-                required minlength="2" maxlength="20" pattern="^[a-zA-Z]+$">
+            <textarea type="text" class="form-control" name="description" [(ngModel)]="devoir.description"
+                placeholder="Description" required minlength="2" maxlength="20" pattern="^[a-zA-Z]+$">
+            </textarea>
         </div>
         <div class="form-group">
             <label>Youtube Video</label>
-            <input type="text" class="form-control" name="ytburl" [(ngModel)]="devoir.ytbUrl" placeholder="Youtube Video"
-                required>
+            <input type="text" class="form-control" name="ytburl" [(ngModel)]="devoir.ytbUrl"
+                placeholder="Youtube Video" required>
         </div>
-  
 
-</div>
-<div class="modal-footer">
-    <button type="submit" class="btn btn-outline-dark">Save</button>
-</div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-dark">Save</button>
+    </div>
 
 </form>

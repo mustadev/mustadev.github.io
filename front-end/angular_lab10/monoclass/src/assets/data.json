@@ -12,65 +12,13 @@
       "tel": "060606060606",
       "age": 104,
       "id": 1
-    },
-    {
-      "nom": "Max",
-      "prenom": "Plank",
-      "dateNaissance": {
-        "year": 1916,
-        "month": 5,
-        "day": 18
-      },
-      "email": "pp@gmail.com",
-      "tel": "060606060606",
-      "age": 104,
-      "id": 1
-    },
-    {
-      "nom": "Max",
-      "prenom": "Plank",
-      "dateNaissance": {
-        "year": 1916,
-        "month": 5,
-        "day": 18
-      },
-      "email": "pp@gmail.com",
-      "tel": "060606060606",
-      "age": 104,
-      "id": 1
-    },
-    {
-      "nom": "Max",
-      "prenom": "Plank",
-      "dateNaissance": {
-        "year": 1916,
-        "month": 5,
-        "day": 18
-      },
-      "email": "pp@gmail.com",
-      "tel": "060606060606",
-      "age": 104,
-      "id": 1
-    },
-    {
-      "nom": "Max",
-      "prenom": "Plank",
-      "dateNaissance": {
-        "year": 1916,
-        "month": 5,
-        "day": 18
-      },
-      "email": "pp@gmail.com",
-      "tel": "060606060606",
-      "age": 104,
-      "id": 1
     }
   ],
   "devoirs": [
     {
       "id": 0,
       "titre": "devoir 1",
-      "description": "description description description description description description description description description description description description description description description description",
+      "description": "devoir description description description description description description description description description description description description description description description description",
       "ytbUrl": "https://www.youtube.com/watch?v=-NER_Dy7ohY"
     }
   ]

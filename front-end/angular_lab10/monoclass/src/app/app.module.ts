@@ -15,6 +15,9 @@ import { EditParticipantComponent } from './components/edit-participant/edit-par
 import { AddDevoirComponent } from './components/add-devoir/add-devoir.component';
 import { EditDevoirComponent } from './components/edit-devoir/edit-devoir.component';
 import { SafeUrlPipe } from './safe-url.pipe';
+import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { SafeUrlPipe } from './safe-url.pipe';
     EditParticipantComponent,
     AddDevoirComponent,
     EditDevoirComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
+    LoginComponent,
+    SignupComponent,
+    ConfirmModalComponent
   ],
   imports: [
     BrowserModule,

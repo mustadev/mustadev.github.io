@@ -4,6 +4,7 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DevoirService } from 'src/app/services/devoir.service';
 import { AddDevoirComponent } from 'src/app/components/add-devoir/add-devoir.component';
 import { EditDevoirComponent } from 'src/app/components/edit-devoir/edit-devoir.component';
+import { ConfirmModalComponent } from 'src/app/components/confirm-modal/confirm-modal.component';
 
 @Component({
   selector: 'app-travaux',
@@ -32,8 +33,21 @@ export class TravauxComponent implements OnInit {
   }
 
   deleteDevoir(id:number){
-    this.devoirService.deleteDevoir(id).subscribe(() => {
-      console.log("paricipant ", id, "deleted");
+    const modalRef = this.modalService.open(ConfirmModalComponent);
+    modalRef.componentInstance.message = "Are you sure you want to delete this Devoir"
+
+    modalRef.result.then(confirm => {
+      if (confirm){
+        console.log("Delete Confirmed", confirm);
+        this.devoirService.deleteDevoir(id).subscribe(resutl => {
+          console.log("Devoir deleted ! "+ id);
+          modalRef.close();
+        });
+      }
+      console.log("delete Canceled");
+      modalRef.dismiss();
+
+      //this.participants.push(participant);
     })
   }
 
