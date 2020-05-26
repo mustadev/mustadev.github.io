@@ -8,6 +8,14 @@ import { Observable } from 'rxjs';
 export class ParticipantGuard implements CanActivate {
   
   constructor(private router:Router){}
+
+
+  /**
+   * Determines whether user is authorized to access page
+   * @param next 
+   * @param state 
+   * @returns activate 
+   */
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {

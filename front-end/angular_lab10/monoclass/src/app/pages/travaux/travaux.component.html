@@ -2,11 +2,18 @@
 <app-nav-bar></app-nav-bar>
 <!-- Nav Bar -->
 
+<!-- Test Fragment -->
+<!-- <div class="row">
+    <div *ngFor="let devoir of devoirs" class="col">
+        <a [routerLink]='"."' [fragment]="devoir.id">{{devoir.id}}</a>
+    </div>
+</div> -->
+<!-- test Fragment -->
 <!-- travaux -->
 <div class="row p-2">
     <div *ngFor="let devoir of devoirs" class="col-12">
         <div class="mr-md-5 ml-md-5">
-            <div class="card mr-md-5 ml-md-5">
+            <div class="card mr-md-5 ml-md-5" [attr.id]='devoir.id'>
                 <div class="card-header">
                     <div class="row">
                         <div class="col-sm-8 col-lg-10">
@@ -32,6 +39,7 @@
             </div>
         </div>
     </div>
-    <button (click)="addDevoir()" class="btn btn-primary add-btn"><span>&#43;</span></button>
+    <button *ngIf="showControlButtons()" (click)="addDevoir()"
+        class="btn btn-primary add-btn"><span>&#43;</span></button>
 </div>
 <!-- travaux -->

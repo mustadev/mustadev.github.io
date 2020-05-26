@@ -1,3 +1,7 @@
+/**
+ * Formateur
+ * class representing Formateur
+ */
 export default class Formateur {
     id: number;
     nom: string;

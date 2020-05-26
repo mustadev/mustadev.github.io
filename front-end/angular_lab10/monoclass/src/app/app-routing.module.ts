@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 
 // components
 import { DiscussionComponent } from './pages/discussion/discussion.component';
@@ -14,7 +14,11 @@ import { FormateurLoginComponent } from './pages/formateur-login/formateur-login
 import { FormateurSignupComponent } from './pages/formateur-signup/formateur-signup.component';
 import { FormateurGuard } from './services/formateur.guard';
 
-
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'enabled',
+  anchorScrolling: 'enabled',
+  scrollOffset: [0, 64],
+};
 
 const routes: Routes = [
   { path: '', redirectTo: '/travaux',pathMatch: 'full'},
@@ -30,7 +34,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

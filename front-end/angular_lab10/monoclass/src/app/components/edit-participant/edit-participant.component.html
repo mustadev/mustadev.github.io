@@ -5,7 +5,7 @@
     </button>
 </div>
 <form novalidate #form="ngForm" (ngSubmit)="submit(form)">
-<div class="modal-body">
+    <div class="modal-body">
 
         <div class="form-group">
             <label>Nom</label>
@@ -20,12 +20,13 @@
         <div class="form-group">
             <label for="dateOfBirth">Date of birth</label>
             <div class="input-group">
-                <input [(ngModel)]="participant.dateNaissance" required id="dateOfBirth" class="form-control" 
-                placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
-                [minDate]="{year: 1900, month: 1, day: 1}"
+                <input [(ngModel)]="participant.dateNaissance" required id="dateOfBirth" class="form-control"
+                    placeholder="yyyy-mm-dd" name="dp" ngbDatepicker [minDate]="{year: 1850, month: 1, day: 1}"
                     #dp="ngbDatepicker">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+                    <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -40,11 +41,11 @@
             <input type="text" class="form-control" name="tel" [(ngModel)]="participant.tel" placeholder="Email"
                 required>
         </div>
-  
 
-</div>
-<div class="modal-footer">
-    <button type="submit" class="btn btn-outline-dark">Save</button>
-</div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-dark">Save</button>
+    </div>
 
 </form>
