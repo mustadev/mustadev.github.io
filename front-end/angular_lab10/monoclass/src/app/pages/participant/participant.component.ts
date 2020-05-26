@@ -33,7 +33,17 @@ export class ParticipantComponent implements OnInit {
     config.backdrop = 'static';
     config.keyboard = false;
   }
-// add participant
+
+  // get init participants
+  ngOnInit(): void {
+    this.participantService.getParticipants().subscribe((participants:Participant[]) => {
+      this.participants = participants;
+      console.log("Participant: ", JSON.stringify(this.participants));
+    });
+   
+  }
+
+  // add participant
   addParticipant() {
     const modalRef = this.modalService.open(AddParticipantComponent);
     modalRef.result.then( participant => {
@@ -75,13 +85,18 @@ export class ParticipantComponent implements OnInit {
       //this.participants.push(participant);
     })
   }
-// get init participants
-  ngOnInit(): void {
-    this.participantService.getParticipants().subscribe((participants:Participant[]) => {
-      this.participants = participants;
-      console.log("Participant: ", JSON.stringify(this.participants));
-    });
-   
+
+  showEditButton(id: number):boolean {
+    console.log('id ', id);
+    if (sessionStorage.getItem("PARTICIPANT") === null) return false;
+    let parJson = sessionStorage.getItem("PARTICIPANT");
+    console.log('from session', parJson);
+    let participant:Participant = JSON.parse(parJson);
+    return participant.id === id;
+  }
+
+  showAllControlButtons():boolean {
+    return sessionStorage.getItem("userType") === "FORMATEUR"
   }
 
 }

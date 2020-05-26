@@ -24,6 +24,15 @@ export class TravauxComponent implements OnInit {
     config.keyboard = false;
   }
 
+  
+  ngOnInit(): void {
+    this.devoirService.getDevoirs().subscribe((devoirs:Devoir[]) => {
+      this.devoirs = devoirs;
+      console.log("Devoir: ", JSON.stringify(this.devoirs));
+    });
+   
+  }
+  
   addDevoir() {
     const modalRef = this.modalService.open(AddDevoirComponent);
     modalRef.result.then( Devoir => {
@@ -76,12 +85,8 @@ export class TravauxComponent implements OnInit {
     return videoUrl;
   }
 
-  ngOnInit(): void {
-    this.devoirService.getDevoirs().subscribe((devoirs:Devoir[]) => {
-      this.devoirs = devoirs;
-      console.log("Devoir: ", JSON.stringify(this.devoirs));
-    });
-   
+  showControlButtons():boolean {
+    return sessionStorage.getItem('isLoggedIn') && 
+      sessionStorage.getItem('userType') === "FORMATEUR";
   }
-
 }

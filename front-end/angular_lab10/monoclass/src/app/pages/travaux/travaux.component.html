@@ -13,7 +13,7 @@
                             <h5>{{devoir.titre}}</h5>
                         </div>
                         <div class="col-sm-4 col-lg-2">
-                            <div class="btn-group" role="group" aria-label="Basic example">
+                            <div *ngIf="showControlButtons()" class="btn-group" role="group" aria-label="Basic example">
                                 <button (click)="editDevoir(devoir.id)" class="btn btn-secondary">Edit</button>
                                 <button (click)="deleteDevoir(devoir.id)" class="btn btn-danger">Delete</button>
                             </div>

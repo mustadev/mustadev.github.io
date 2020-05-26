@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
     this.participant.age = new Date().getFullYear() - this.participant.dateNaissance.year;
     this.participantService.signup(this.participant).subscribe(participant => {
       console.log("regestred as :", JSON.stringify(participant));
-      sessionStorage.setItem("participant", JSON.stringify(participant));
+      sessionStorage.setItem("PARTICIPANT", JSON.stringify(participant));
       sessionStorage.setItem('isLoggedIn', "true");
       sessionStorage.setItem('userType', "PARTICIPANT");
       this.router.navigate(['/travaux']);

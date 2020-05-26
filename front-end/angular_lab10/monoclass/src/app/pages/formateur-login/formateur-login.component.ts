@@ -25,7 +25,7 @@ export class FormateurLoginComponent implements OnInit {
       console.log("loged in as: ", JSON.stringify(formateur[0]));
       sessionStorage.setItem('formateur', JSON.stringify(formateur[0]));
       sessionStorage.setItem('isLoggedIn', "true");
-      sessionStorage.setItem('userType', "FORMATEUT");
+      sessionStorage.setItem('userType', "FORMATEUR");
       this.router.navigate(['/discussion']);
     });
   }
