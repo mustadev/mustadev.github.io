@@ -20,6 +20,10 @@ export class EditParticipantComponent implements OnInit {
   }
 
   // submit and save participant
+  /**
+   * Submits edit participant component
+   * @param form 
+   */
   submit(form:NgForm){
     this.participant.age = new Date().getFullYear() - this.participant.dateNaissance.year;
     console.log("before server request", JSON.stringify(this.participant))

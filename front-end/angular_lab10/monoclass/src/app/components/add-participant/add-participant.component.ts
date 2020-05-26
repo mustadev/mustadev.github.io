@@ -4,6 +4,9 @@ import { NgForm } from '@angular/forms';
 import Participant from 'src/app/models/Participant';
 import { ParticipantService } from 'src/app/services/participant.service';
 
+/**
+ * Add Participant Component
+ */
 @Component({
   selector: 'app-add-participant',
   templateUrl: './add-participant.component.html',
@@ -12,7 +15,6 @@ import { ParticipantService } from 'src/app/services/participant.service';
 export class AddParticipantComponent implements OnInit {
 
   participant:Participant;
-  dateNaissance:NgbDate;
   constructor(
     private participantService:ParticipantService,
     public activeModal: NgbActiveModal) { }
@@ -22,6 +24,10 @@ export class AddParticipantComponent implements OnInit {
   }
 
   // submit and add participant
+  /**
+   * Submits add participant component
+   * @param form 
+   */
   submit(form:NgForm){
     this.participant.age = new Date().getFullYear() - this.participant.dateNaissance.year;
     console.log("before server request", JSON.stringify(this.participant))

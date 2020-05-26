@@ -19,6 +19,10 @@ export class EditDevoirComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Submits edit devoir component
+   * @param form 
+   */
   submit(form:NgForm){
     console.log("before server request", JSON.stringify(this.devoir))
     this.devoirService.updateDevoir(this.devoir).subscribe((devoir:Devoir) => {
