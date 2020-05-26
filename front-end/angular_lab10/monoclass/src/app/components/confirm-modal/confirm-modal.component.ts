@@ -14,10 +14,18 @@ export class ConfirmModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Confirm modal component 
+   * confirms operation by passing true to NgbActiveModal
+   */
   confirm(){
     this.activeModal.close(true);
   }
 
+  /**
+   * Cancel  modal component 
+   * cancels operation by passing false to NgbActiveModal
+   */
   cancel(){
     this.activeModal.close(false);
   }

@@ -13,6 +13,12 @@ export class FormateurService {
   constructor(private http:HttpClient) { }
 
 
+  /**
+   * Logins formateur service
+   * @param email 
+   * @param password 
+   * @returns login 
+   */
   login(email:string, password:string):Observable<Formateur[]> {
     const params = new HttpParams()
       .set("email", email)
@@ -21,6 +27,11 @@ export class FormateurService {
     return this.http.get<Formateur[]>(FORMATEUR_URL, {params: params});
   }
 
+  /**
+   * Signups formateur service
+   * @param formateur 
+   * @returns signup 
+   */
   signup(formateur:Formateur):Observable<Formateur>{
     const headers = new HttpHeaders();
     headers.set("Content-Type", "application/json");

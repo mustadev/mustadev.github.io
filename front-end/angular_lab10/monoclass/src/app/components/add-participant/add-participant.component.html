@@ -22,7 +22,7 @@
             <div class="input-group">
                 <input [(ngModel)]="participant.dateNaissance" required id="dateOfBirth" class="form-control" 
                 placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
-                [minDate]="{year: 1900, month: 1, day: 1}"
+                [minDate]="{year: 1850, month: 1, day: 1}"
                     #dp="ngbDatepicker">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>

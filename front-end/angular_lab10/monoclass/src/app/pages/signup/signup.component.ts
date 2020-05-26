@@ -20,6 +20,10 @@ export class SignupComponent implements OnInit {
     this.participant = new Participant();
   }
 
+  /**
+   * Signups signup component
+   * @param form 
+   */
   signup(form:NgForm) {
     this.participant.age = new Date().getFullYear() - this.participant.dateNaissance.year;
     this.participantService.signup(this.participant).subscribe(participant => {

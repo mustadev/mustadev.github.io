@@ -5,6 +5,8 @@ import { AddParticipantComponent } from 'src/app/components/add-participant/add-
 import { ParticipantService } from 'src/app/services/participant.service';
 import { EditParticipantComponent } from 'src/app/components/edit-participant/edit-participant.component';
 import { ConfirmModalComponent } from 'src/app/components/confirm-modal/confirm-modal.component';
+import Devoir from 'src/app/models/devoir';
+import { DevoirService } from 'src/app/services/devoir.service';
 
 @Component({
   selector: 'app-participant',
@@ -23,10 +25,12 @@ export class ParticipantComponent implements OnInit {
   // ]
 
   participants:Participant[];
+  devoirs:Devoir[];
   
   providers: [NgbModalConfig, NgbModal]
   constructor(
     private participantService:ParticipantService,
+    private devoirService:DevoirService,
     config: NgbModalConfig, 
     private modalService: NgbModal) {
     // customize default values of modals used by this component tree
@@ -40,18 +44,28 @@ export class ParticipantComponent implements OnInit {
       this.participants = participants;
       console.log("Participant: ", JSON.stringify(this.participants));
     });
-   
+    this.devoirService.getDevoirs().subscribe((devoirs:Devoir[]) => {
+      this.devoirs = devoirs;
+      console.log("Devoir: ", JSON.stringify(this.devoirs));
+    });
   }
 
   // add participant
+  /**
+   * Adds participant
+   */
   addParticipant() {
     const modalRef = this.modalService.open(AddParticipantComponent);
     modalRef.result.then( participant => {
       console.log("result of module", participant);
-      //this.participants.push(participant);
+      this.participants.push(participant);
     });
   }
 // delete Participant participant
+  /**
+   * Deletes participant
+   * @param id 
+   */
   deleteParticipant(id:number){
     const modalRef = this.modalService.open(ConfirmModalComponent);
     modalRef.componentInstance.message = "Are you sure you want to delete this Participant"
@@ -59,7 +73,11 @@ export class ParticipantComponent implements OnInit {
       if (confirm){
         console.log("Delete Confirmed", confirm);
         this.participantService.deleteParticipant(id).subscribe(resutl => {
-          console.log("participant deleted ! "+ id);
+          const objIndex = this.participants.findIndex(devoir => devoir.id === id);
+          if (objIndex > -1) {
+            let deltetedParticipants = this.participants.splice(objIndex, 1);
+            console.log("Devoir deleted ! ", JSON.stringify(deltetedParticipants));
+          }
           modalRef.close();
         });
       }
@@ -69,6 +87,10 @@ export class ParticipantComponent implements OnInit {
     })
   }
 // edit participant
+  /**
+   * Edits participant
+   * @param id 
+   */
   editParticipant(id:number){
     console.log("edit user id: ", id);
     let participant = this.participants.find((part) => part.id === id);
@@ -86,6 +108,11 @@ export class ParticipantComponent implements OnInit {
     })
   }
 
+  /**
+   * Shows edit button
+   * @param id 
+   * @returns true if edit button 
+   */
   showEditButton(id: number):boolean {
     console.log('id ', id);
     if (sessionStorage.getItem("PARTICIPANT") === null) return false;
@@ -95,6 +122,10 @@ export class ParticipantComponent implements OnInit {
     return participant.id === id;
   }
 
+  /**
+   * Shows all control buttons
+   * @returns true if User type is Formateur 
+   */
   showAllControlButtons():boolean {
     return sessionStorage.getItem("userType") === "FORMATEUR"
   }

@@ -7,6 +7,14 @@ import { Observable } from 'rxjs';
 })
 export class FormateurGuard implements CanActivate {
   constructor(private router:Router){}
+
+
+  /**
+   * Determines whether user is Formateur
+   * @param next 
+   * @param state 
+   * @returns activate 
+   */
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
