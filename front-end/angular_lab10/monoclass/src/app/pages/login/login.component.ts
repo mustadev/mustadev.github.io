@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('PARTICIPANT', JSON.stringify(participants[0]));
       sessionStorage.setItem('isLoggedIn', "true");
       sessionStorage.setItem('userType', "PARTICIPANT");
-      // this.router.navigate(['/travaux']);
+      this.router.navigate(['/travaux']);
     });
   }
 
