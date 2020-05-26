@@ -20,6 +20,10 @@ export class FormateurSignupComponent implements OnInit {
     this.formateur = new Formateur();
   }
 
+  /**
+   * Signups formateur signup component
+   * @param form 
+   */
   signup(form:NgForm) {
    this.formateurService.signup(this.formateur).subscribe(formateur => {
       console.log("regestred as :", JSON.stringify(formateur));

@@ -1,5 +1,9 @@
 import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 
+/**
+ * Participant 
+ * class representing Student
+ */
 export default class Participant {
     id: number;
     nom: string;

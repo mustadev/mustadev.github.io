@@ -19,11 +19,14 @@ export class FormateurLoginComponent implements OnInit {
 
   }
 
+  /**
+   * Logins formateur login component
+   */
   login(){
     console.log("login:", this.email, this.password)
     this.formateurService.login(this.email, this.password).subscribe(formateur => {
       console.log("loged in as: ", JSON.stringify(formateur[0]));
-      sessionStorage.setItem('formateur', JSON.stringify(formateur[0]));
+      sessionStorage.setItem('FORMATEUR', JSON.stringify(formateur[0]));
       sessionStorage.setItem('isLoggedIn', "true");
       sessionStorage.setItem('userType', "FORMATEUR");
       this.router.navigate(['/discussion']);

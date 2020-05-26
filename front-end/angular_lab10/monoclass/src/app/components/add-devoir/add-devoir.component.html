@@ -10,12 +10,12 @@
         <div class="form-group">
             <label>Title</label>
             <input type="text" class="form-control" name="titre" [(ngModel)]="devoir.titre" placeholder="titre" required
-                minlength="2" maxlength="20" pattern="^[a-zA-Z]+$">
+                minlength="2" maxlength="50" pattern="^[a-zA-Z]+$">
         </div>
         <div class="form-group">
             <label>Description</label>
             <textarea type="text" class="form-control" name="description" [(ngModel)]="devoir.description"
-                placeholder="Description" required minlength="2" maxlength="20" pattern="^[a-zA-Z]+$">
+                placeholder="Description" required minlength="2"  pattern="^[a-zA-Z]+$">
             </textarea>
         </div>
         <div class="form-group">

@@ -4,6 +4,9 @@ import { DevoirService } from 'src/app/services/devoir.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import Devoir from 'src/app/models/devoir';
 
+/**
+ * Add devoir Component
+ */
 @Component({
   selector: 'app-add-devoir',
   templateUrl: './add-devoir.component.html',
@@ -20,6 +23,10 @@ export class AddDevoirComponent implements OnInit {
     this.devoir = {};
   }
 // submit and add devoir
+  /**
+   * Submits add devoir component
+   * @param form 
+   */
   submit(form:NgForm){
     let date = new Date(this.dateNaissance);
     let age = new Date().getFullYear() - date.getFullYear();
