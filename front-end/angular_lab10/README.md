@@ -31,3 +31,11 @@ Front-End
 ```bash
 ng serve -o 
 ````
+
+### Formateur Login
+navigate to http://localhost:4200/formateur/login
+Email: mohamed@gmail.com
+Password: password
+ __for security reasons formateur does not have sign up page __
+ 
+ Licence: GNU General Public License v3. 
