@@ -1,23 +1,4 @@
 {
-<<<<<<< HEAD
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
-=======
   "participants": [
     {
       "nom": "Plank",
@@ -76,25 +57,24 @@
   ],
   "formateurs": [
     {
-      "nom": "El Hajji",
+      "nom": "Mohamde",
       "prenom": "Mohamed",
       "tel": "06060606",
-      "email": "elhajji@gmail.com",
+      "email": "mohamed@gmail.com",
       "password": "password",
       "id": 0
     }
   ],
   "discussions": [
     {
-      "body": "hello",
-      "sender": "Mohamed El Hajji",
+      "body": "Hi",
+      "sender": "Mohamed Mohamde",
       "id": 1
     },
     {
-      "body": "hello",
+      "body": "Hello",
       "sender": "Mustapha Mustapha",
       "id": 2
     }
   ]
->>>>>>> 946a81a3274f63e5d77ccd9d4b247ad0a772accb
 }
