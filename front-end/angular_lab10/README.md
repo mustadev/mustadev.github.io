@@ -33,9 +33,14 @@ ng serve -o
 ````
 
 ### Formateur Login
+
 navigate to http://localhost:4200/formateur/login
+
 Email: mohamed@gmail.com
+
 Password: password
+
  <em>for security reasons formateur does not have sign up page</em>
+ 
  
  Licence: GNU General Public License v3. 
